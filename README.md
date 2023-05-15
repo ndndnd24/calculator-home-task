@@ -68,3 +68,21 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### percentage
+
+You must input a number, press "%" button, then input another number (this number must be the percentage of the firstly input number) and in the end, press "=" to get the result. For example, input 150, then press "%", then input 20, then press "=", the calculator shows 30. It means, that the 20% of 150 is 30.
+
+### memory
+
+If the screen shows a number after some calculations, or you input it manualy, you can push "M+" button in order to save the number shown on the screen into the memory. You can do some more calculations, and if you push "M-" button, you will see the memorized number on the screen. "AC" button will clear the memory as well.
+
+### exponentiation
+
+You must input a number. This will be the number, you want to exponent. Input a number, then press "x^y" button. You need to input another number. Then press "=" button in order to do the calculations.
+
+### other calculations
+
+Other calculations work like it should work on a normal calculator, I think I covered the intereseting cases above.
+
