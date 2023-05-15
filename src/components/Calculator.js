@@ -3,6 +3,7 @@ import "../Calculator.css";
 
 const Calculator = () => {
   const [displayValue, setDisplayValue] = useState("0");
+  const [memoryValue, setMemoryValue] = useState(null);
   const [previousValue, setPreviousValue] = useState(null);
   const [operator, setOperator] = useState(null);
   const [waitingForSecondOperand, setWaitingForSecondOperand] = useState(false);
@@ -11,6 +12,7 @@ const Calculator = () => {
     setDisplayValue("0");
     setPreviousValue(null);
     setOperator(null);
+    setMemoryValue(null);
     setWaitingForSecondOperand(false);
   };
 
@@ -119,6 +121,20 @@ const Calculator = () => {
     setWaitingForSecondOperand(true);
   };
 
+  const addToMemory = () => {
+    const currentResult = parseFloat(displayValue);
+    setWaitingForSecondOperand(false);
+    setMemoryValue(currentResult);
+  };
+
+  const showMemory = () => {
+    if (memoryValue != null) {
+      setDisplayValue(String(memoryValue));
+      inputDigit(memoryValue);
+      setWaitingForSecondOperand(false);
+    }
+  };
+
   return (
     <div className="calculator">
       <div className="display">{formatDisplayValue(displayValue)}</div>
@@ -195,8 +211,12 @@ const Calculator = () => {
         <button className="key" onClick={() => squareRoot()}>
           √x
         </button>
-        <button className="key">M+</button>
-        <button className="key">M-</button>
+        <button className="key" onClick={() => addToMemory()}>
+          M+
+        </button>
+        <button className="key" onClick={() => showMemory()}>
+          M-
+        </button>
         <button className="key key-equal" onClick={() => handleEqual()}>
           =
         </button>
