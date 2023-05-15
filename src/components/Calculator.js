@@ -5,7 +5,10 @@ const Calculator = () => {
   const [displayValue, setDisplayValue] = useState("0");
 
   const inputDigit = (digit) => {
-    setDisplayValue(digit);
+    setDisplayValue((prevDisplay) => {
+      const display = prevDisplay === "0" ? String(digit) : prevDisplay + digit;
+      return display;
+    });
   };
 
   const formatDisplayValue = (value) => {
