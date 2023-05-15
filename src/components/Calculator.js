@@ -1,28 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Calculator.css";
 
 const Calculator = () => {
+  const [displayValue, setDisplayValue] = useState("0");
+
+  const inputDigit = (digit) => {
+    setDisplayValue(digit);
+  };
+
+  const formatDisplayValue = (value) => {
+    const parts = value.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    return parts.join(".");
+  };
+
   return (
     <div className="calculator">
-      <div className="display">0</div>
+      <div className="display">{formatDisplayValue(displayValue)}</div>
       <div className="keypad">
         <button className="key key-ac">AC</button>
         <button className="key">+/-</button>
         <button className="key">%</button>
-        <button className="key key-colored">÷</button>
-        <button className="key">7</button>
-        <button className="key">8</button>
-        <button className="key">9</button>
-        <button className="key key-colored">x</button>
-        <button className="key">4</button>
-        <button className="key">5</button>
-        <button className="key">6</button>
-        <button className="key key-colored">-</button>
-        <button className="key">1</button>
-        <button className="key">2</button>
-        <button className="key">3</button>
-        <button className="key key-colored">+</button>
-        <button className="key">0</button>
+        <button className="key">÷</button>
+        <button className="key" onClick={() => inputDigit(7)}>
+          7
+        </button>
+        <button className="key" onClick={() => inputDigit(8)}>
+          8
+        </button>
+        <button className="key" onClick={() => inputDigit(9)}>
+          9
+        </button>
+        <button className="key">x</button>
+        <button className="key" onClick={() => inputDigit(4)}>
+          4
+        </button>
+        <button className="key" onClick={() => inputDigit(5)}>
+          5
+        </button>
+        <button className="key" onClick={() => inputDigit(6)}>
+          6
+        </button>
+        <button className="key">-</button>
+        <button className="key" onClick={() => inputDigit(1)}>
+          1
+        </button>
+        <button className="key" onClick={() => inputDigit(2)}>
+          2
+        </button>
+        <button className="key" onClick={() => inputDigit(3)}>
+          3
+        </button>
+        <button className="key">+</button>
+        <button className="key" onClick={() => inputDigit(0)}>
+          0
+        </button>
         <button className="key">.</button>
         <button className="key">x^y</button>
         <button className="key">√x</button>
