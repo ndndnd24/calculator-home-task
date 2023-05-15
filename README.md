@@ -70,6 +70,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
+*********************************************************************
+
 ### percentage
 
 You must input a number, press "%" button, then input another number (this number must be the percentage of the firstly input number) and in the end, press "=" to get the result. For example, input 150, then press "%", then input 20, then press "=", the calculator shows 30. It means, that the 20% of 150 is 30.
